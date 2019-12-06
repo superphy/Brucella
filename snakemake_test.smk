@@ -60,10 +60,10 @@ rule r_mash:
 		'rmash_files/rmash_files.txt'
 	output:
 	 	'rmash_files/rmash_output.csv' 
-	params:
-		files = open('rmash_files/rmash_files.txt').read()
+	#params:
+		#files = open('rmash_files/rmash_files.txt').read()
 	shell:
-		'refseq_masher matches {params.files} -o rmash_files/rmash_output.csv '+cwd+' --output-type csv -n 5'
+		'refseq_masher matches $(cat {input}) -o rmash_files/rmash_output.csv '+cwd+' --output-type csv -n 5'
 
 rule r_mash_filtering:
 	input:
