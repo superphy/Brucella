@@ -7,7 +7,7 @@ species = []
 j=0
 n=5
 
-rmash = pd.read_csv("rmash_output.csv")
+rmash = pd.read_csv("rmash_files/rmash_output.csv")
 strains= ['Brucella abortus','Brucella canis','Brucella ceti', 'Brucella inopinata', 'Brucella melitensis', 'Brucella microti', 'Brucella neotomae', 'Brucella ovis', 'Brucella pinnipedialis', 'Brucella sp', 'Brucella suis', 'Ochrobactrum anthropi', 'Ochrobactrum intermedium']
 
 while j< len(rmash):
