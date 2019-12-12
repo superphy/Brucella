@@ -8,7 +8,9 @@ cwd = os.getcwd()
 
 rule all:
 	input:
-		'ksnp_files/kSNP3_Output/Logfile.txt'
+		k_counts = 'Kmer_Counts.csv', 
+		suis_k_counts = 'suis_biovar_files/Suis_Kmer_Counts.csv',
+		sp_occ = 'Ranks.csv'
 '''
 #Aquiring the data from the ncbi database
 rule ncbi_data_retrieval:
@@ -116,7 +118,7 @@ rule ksnp_input:
 		'ksnp_files/kSNP3_input.txt'
 	run:
 		files = os.listdir('Approved_Sequences/')
-		kfiles = [cwd+'/Approved_Sequences/'+file+"	"+file[4:13]+'\n' for file in files]
+		kfiles = [cwd+'/Approved_Sequences/'+file+"	"+file[4:13]+'\n' for file in files if file[0] != '.']
 		with open('ksnp_files/kSNP3_input.txt', 'w') as ksnp_input_file:
 			for row in kfiles:
 				ksnp_input_file.write(row)
@@ -126,7 +128,182 @@ rule ksnp:
 	input:
 		'ksnp_files/kSNP3_input.txt'
 	output:
-		'ksnp_files/kSNP3_Output/Logfile.txt'
+		'ksnp_files/Logfile.txt'
 	run:
-		#shell("PATH=$PATH:~/Desktop/Fall_2019/Brucella/kSNP3.1_Linux_package/kSNP3")
-		shell('kSNP3 -in {input} -outdir ksnp_files/kSNP3_Output/ -k 31 -CPU {cpu} | tee {output}')
+		#shell("PATH=$PATH:~/Desktop/Fall_2019/Brucella_Snakemake_Test_Evn/kSNP3.1_Linux_package/kSNP3")
+		shell('kSNP3 -in {input} -outdir ksnp_files/ -k 31 -CPU {cpu} | tee {output}')
+
+rule phylogenetic_tree:
+	input:
+		ksnp_flag = 'ksnp_files/Logfile.txt', 
+		tree_manipulation = 'source/tree_manipulation.py'
+	output:
+		'phylogenetic_tree.pdf'
+	run:
+		shell('python {input.tree_manipulation}')
+
+rule suis_master_fasta:
+	input:
+		suis_meta = 'source/suis/suis_meta.py',
+		approved_seq = 'Approved_Sequences/'
+	output:
+		'suis_biovar_files/suis_master.fna'
+	run:
+		shell('python {input.suis_meta}')
+
+rule suis_blast_db:
+	input:
+		master = 'suis_biovar_files/suis_master.fna'
+	output:
+		blast_db = 'suis_biovar_files/blast/suis_db.ndb'
+	run:
+		shell('makeblastdb -in {input} -parse_seqids -blastdb_version 5 -title "Brucella Suis" -dbtype nucl -out suis_biovar_files/blast/suis_db')
+
+rule suis_blast_search:
+	input:
+		query_file = 'source/suis/query_file.fna',
+		blast_db = 'suis_biovar_files/blast/suis_db.ndb'
+	output:
+		serch_out = 'suis_biovar_files/blast/blast_search_output.tsv'
+	run:
+		shell('blastn -db suis_biovar_files/blast/suis_db -query {input.query_file} -dust no -word_size 7 -evalue 100 -outfmt 6 -out {output}')
+
+rule suis_blast_output:
+	input:
+		blast_search_output = 'suis_biovar_files/blast/blast_search_output.tsv',
+		bo = 'source/suis/blast_output.py'
+	output:
+		'suis_biovar_files/Blast_Primer_Matching.csv'
+	run:
+		shell('python {input.bo}')	
+
+rule suis_biovar_assignment:
+	input:
+		ba = 'source/suis/biovar_assignment.py',
+		bpm = 'suis_biovar_files/Blast_Primer_Matching.csv'
+
+	output:
+		'suis_biovar_files/Suis_Biovar.csv'
+	run:
+		shell('python {input.ba}')
+
+#Generates a fasta file that is the sum of all fasta files in the dataset
+rule jellyfish_all_brucella:
+	input:
+		'Approved_Sequences/'
+	output:
+		'jellyfish/all_brucella.fna'
+	run:
+		shell('cat {input}*.fna > {output}')
+#Performs the jellyfish count opperation on all_brucella.fna
+rule all_jellyfish_count: 
+	input: 
+		'jellyfish/all_brucella.fna'
+	output:
+		temp('jellyfish/j_all_brucella.jf')
+	run:
+		shell('jellyfish count -C -m {kmer_size} -s 100M -t {cpu} {input} -o {output} -L 190 -U 501 --out-counter-len 1')
+
+#Performs the jellyfish dump opperation on all_brucella.fna
+rule all_jellyfish_dump: 
+	input: 
+		'jellyfish/j_all_brucella.jf'
+	output:
+		'jellyfish/j_all_brucella.fna'
+	run:
+		shell('jellyfish dump {input} > {output}')
+
+rule suis_all_jellyfish_count:
+	input:
+		'suis_biovar_files/suis_master.fna'
+	output:
+		temp('suis_biovar_files/j_all_suis.jf')
+	run:
+		shell('jellyfish count -C -m {kmer_size} -s 100M -t {cpu} {input} -o {output} -L 190 -U 501 --out-counter-len 1')
+
+rule suis_all_jellyfish_dump:
+	input:
+		'suis_biovar_files/j_all_suis.jf'
+	output:
+		'suis_biovar_files/j_all_suis.fna'
+	run:
+		shell('jellyfish dump {input} > {output}')
+
+#Performs the jellyfish count opperation on everything in the dataset
+rule jellyfish:
+	input:
+		"Approved_Sequences/"
+	output:
+		flag = 'jellyfish/jellyfish_complete.txt', 
+		output_direct = directory('jellyfish/output/')
+	run:
+		samples = glob.glob('Approved_Sequences/*.fna')
+		for sample in samples:	
+			shell('jellyfish count -C -m {kmer_size} -s 100M -t 2 '+sample+' -o jellyfish/output/'+sample[19:len(sample)-4]+'.jf --out-counter-len 1') # runs the jellyfish count opperation 
+			shell('jellyfish dump jellyfish/output/'+sample[19:len(sample)-4]+'.jf > jellyfish/output/'+sample[19:len(sample)-4]+'.fna') # runs the jellyfish dump opperation 
+			shell('rm jellyfish/output/'+sample[19:len(sample)-4]+'.jf')
+		shell('touch {output}')
+
+rule suis_jellyfish:
+	input:
+		approved_seq = "Approved_Sequences/", 
+		suis_biovar = 'suis_biovar_files/Suis_Biovar.csv'
+	output:
+		flag = "suis_biovar_files/jellyfish_complete.txt", 
+		output_direct = directory('suis_biovar_files/jellyfish/')
+	run:
+		suis_biovar = pd.read_csv('suis_biovar_files/Suis_Biovar.csv', index_col = 0)
+		suis_biovar = suis_biovar[suis_biovar['Biovar Classification'] != 'No Matched Biovar']
+		samples = suis_biovar.index.values
+		for sample in samples:	
+			shell('jellyfish count -C -m {kmer_size} -s 100M -t 2 Approved_Sequences/'+sample+'.fna -o suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf --out-counter-len 1') # runs the jellyfish count opperation 
+			shell('jellyfish dump suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf > suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.fna') # runs the jellyfish dump opperation 
+			shell('rm suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf')
+		shell('touch {output}')
+
+rule kmer_counts:
+	input:
+		flag = 'suis_biovar_files/jellyfish_complete.txt',
+		k_counts = 'source/kmer_counts.py'
+	output:
+		'Kmer_Counts.csv'
+	run:
+		shell('python {input.k_counts}')
+
+rule suis_kmer_counts:
+	input:
+		flag = 'jellyfish/jellyfish_complete.txt',
+		k_counts = 'source/suis/suis_kmer_counts.py'
+	output:
+		'suis_biovar_files/Suis_Kmer_Counts.csv'
+	run:
+		shell('python {input.k_counts}')	
+
+rule species_occ:
+	input:
+		'Metadata.csv'
+	output:
+		'Species_Occurrence.csv'
+	run:	
+		metadata = pd.read_csv('Metadata.csv', index_col = 0 )
+		species = list(metadata['Strain'].unique())
+		species_occ = {}
+		for sp in species:
+			species_occ[sp] = 0
+		for i, row in metadata.iterrows():
+			species_occ[row['Strain']]+=1
+		df = pd.DataFrame()
+		for i in species_occ.keys():
+			df[i] = pd.Series(species_occ[i])
+		df = df.T.rename(columns = {0:'Species Occurrence'})
+		df.to_csv('Species_Occurrence.csv')
+
+rule ranks:
+	input:
+		species_occ = 'Species_Occurrence.csv', 
+		k_counts = 'Kmer_Counts.csv',
+		ranks = 'source/ranks.py'
+	output:
+		'Ranks.csv'
+	run:
+		shell('python {input.ranks}')

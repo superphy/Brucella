@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	biovar_assignment
+	1	blast_output
+	3
+
+rule blast_output:
+    input: blast/blast_search_output.tsv, blast_output.py
+    output: Blast_Primer_Matching.csv
+    jobid: 2
+
+Finished job 2.
+1 of 3 steps (33%) done
+
+rule biovar_assignment:
+    input: biovar_assignment.py, Blast_Primer_Matching.csv
+    output: Suis_Biovar.csv
+    jobid: 1
+
+Finished job 1.
+2 of 3 steps (67%) done
+
+localrule all:
+    input: Suis_Biovar.csv
+    jobid: 0
+
+Finished job 0.
+3 of 3 steps (100%) done

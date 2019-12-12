@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	kmer_dataframe
+	2
+
+rule kmer_dataframe:
+    input: flags/suis_jellyfish_flag.txt, suis_count_to_df.py
+    output: suis_kmer_counts.csv
+    jobid: 2
+    reason: Missing output files: suis_kmer_counts.csv
+
+Finished job 2.
+1 of 2 steps (50%) done
+
+localrule all:
+    input: j_all_suis.fna, suis_kmer_counts.csv
+    jobid: 0
+    reason: Input files updated by another job: suis_kmer_counts.csv
+
+Finished job 0.
+2 of 2 steps (100%) done

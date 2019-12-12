@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 59 of /home/ashlynn/Desktop/Fall_2019/Brucella/source/suis/suis_jellyfish.smk:
+Missing input files for rule kmer_dataframe:
+flags/jellyfish_flag.txt

@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	biovar_assignment
+	1	blast_database
+	1	blast_master_fasta
+	1	blast_output
+	1	blast_search
+	6
+
+rule blast_master_fasta:
+    input: ../../Approved_Sequences/, suis_meta.py
+    output: suis_master.fna
+    jobid: 5
+    reason: Missing output files: suis_master.fna
+
+Finished job 5.
+1 of 6 steps (17%) done
+
+rule blast_database:
+    input: suis_master.fna
+    output: blast/suis_master.fna.ndb
+    jobid: 4
+    reason: Missing output files: blast/suis_master.fna.ndb; Input files updated by another job: suis_master.fna
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2019-12-02T103510.550831.snakemake.log

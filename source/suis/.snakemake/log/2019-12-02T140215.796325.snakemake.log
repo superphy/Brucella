@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	kmer_dataframe
+	2
+
+rule kmer_dataframe:
+    input: flags/suis_jellyfish_flag.txt, suis_count_to_df.py
+    output: suis_kmer_counts.csv
+    jobid: 2
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2019-12-02T140215.796325.snakemake.log

@@ -1,0 +1,994 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	51	count
+	51	dump
+	1	jellyfish_complete
+	104
+
+rule count:
+    input: ../../Approved_Sequences/GCF_900446145_1_59071_D01_genomic.fna
+    output: suis_jellyfish_output/GCF_900446145_1_59071_D01_genomic.jf
+    jobid: 100
+    wildcards: samples=GCF_900446145_1_59071_D01_genomic
+
+Finished job 100.
+1 of 104 steps (0.96%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_900446145_1_59071_D01_genomic.jf
+    output: suis_jellyfish_output/GCF_900446145_1_59071_D01_genomic.fna
+    jobid: 49
+    wildcards: samples=GCF_900446145_1_59071_D01_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_900446145_1_59071_D01_genomic.jf.
+Finished job 49.
+2 of 104 steps (2%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.jf
+    jobid: 81
+    wildcards: samples=GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic
+
+Finished job 81.
+3 of 104 steps (3%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.fna
+    jobid: 30
+    wildcards: samples=GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.jf.
+Finished job 30.
+4 of 104 steps (4%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.jf
+    jobid: 90
+    wildcards: samples=GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic
+
+Finished job 90.
+5 of 104 steps (5%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.fna
+    jobid: 39
+    wildcards: samples=GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.jf.
+Finished job 39.
+6 of 104 steps (6%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.jf
+    jobid: 59
+    wildcards: samples=GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic
+
+Finished job 59.
+7 of 104 steps (7%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.fna
+    jobid: 8
+    wildcards: samples=GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.jf.
+Finished job 8.
+8 of 104 steps (8%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.jf
+    jobid: 64
+    wildcards: samples=GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic
+
+Finished job 64.
+9 of 104 steps (9%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.fna
+    jobid: 13
+    wildcards: samples=GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.jf.
+Finished job 13.
+10 of 104 steps (10%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.jf
+    jobid: 99
+    wildcards: samples=GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic
+
+Finished job 99.
+11 of 104 steps (11%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.fna
+    jobid: 48
+    wildcards: samples=GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.jf.
+Finished job 48.
+12 of 104 steps (12%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000698325_1_ASM69832v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000698325_1_ASM69832v1_genomic.jf
+    jobid: 87
+    wildcards: samples=GCF_000698325_1_ASM69832v1_genomic
+
+Finished job 87.
+13 of 104 steps (12%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000698325_1_ASM69832v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000698325_1_ASM69832v1_genomic.fna
+    jobid: 36
+    wildcards: samples=GCF_000698325_1_ASM69832v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000698325_1_ASM69832v1_genomic.jf.
+Finished job 36.
+14 of 104 steps (13%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000698345_1_ASM69834v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000698345_1_ASM69834v1_genomic.jf
+    jobid: 65
+    wildcards: samples=GCF_000698345_1_ASM69834v1_genomic
+
+Finished job 65.
+15 of 104 steps (14%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000698345_1_ASM69834v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000698345_1_ASM69834v1_genomic.fna
+    jobid: 14
+    wildcards: samples=GCF_000698345_1_ASM69834v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000698345_1_ASM69834v1_genomic.jf.
+Finished job 14.
+16 of 104 steps (15%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.jf
+    jobid: 84
+    wildcards: samples=GCF_000371165_1_Bruc_suis_F12_02_V1_genomic
+
+Finished job 84.
+17 of 104 steps (16%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.fna
+    jobid: 33
+    wildcards: samples=GCF_000371165_1_Bruc_suis_F12_02_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.jf.
+Finished job 33.
+18 of 104 steps (17%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000698285_1_ASM69828v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000698285_1_ASM69828v1_genomic.jf
+    jobid: 55
+    wildcards: samples=GCF_000698285_1_ASM69828v1_genomic
+
+Finished job 55.
+19 of 104 steps (18%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000698285_1_ASM69828v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000698285_1_ASM69828v1_genomic.fna
+    jobid: 4
+    wildcards: samples=GCF_000698285_1_ASM69828v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000698285_1_ASM69828v1_genomic.jf.
+Finished job 4.
+20 of 104 steps (19%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.jf
+    jobid: 60
+    wildcards: samples=GCF_000366225_1_Bruc_suis_92_63_V1_genomic
+
+Finished job 60.
+21 of 104 steps (20%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.fna
+    jobid: 9
+    wildcards: samples=GCF_000366225_1_Bruc_suis_92_63_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.jf.
+Finished job 9.
+22 of 104 steps (21%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000698245_1_ASM69824v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000698245_1_ASM69824v1_genomic.jf
+    jobid: 61
+    wildcards: samples=GCF_000698245_1_ASM69824v1_genomic
+
+Finished job 61.
+23 of 104 steps (22%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000698245_1_ASM69824v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000698245_1_ASM69824v1_genomic.fna
+    jobid: 10
+    wildcards: samples=GCF_000698245_1_ASM69824v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000698245_1_ASM69824v1_genomic.jf.
+Finished job 10.
+24 of 104 steps (23%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000018905_1_ASM1890v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000018905_1_ASM1890v1_genomic.jf
+    jobid: 71
+    wildcards: samples=GCF_000018905_1_ASM1890v1_genomic
+
+Finished job 71.
+25 of 104 steps (24%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000018905_1_ASM1890v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000018905_1_ASM1890v1_genomic.fna
+    jobid: 20
+    wildcards: samples=GCF_000018905_1_ASM1890v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000018905_1_ASM1890v1_genomic.jf.
+Finished job 20.
+26 of 104 steps (25%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000699025_1_ASM69902v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000699025_1_ASM69902v1_genomic.jf
+    jobid: 79
+    wildcards: samples=GCF_000699025_1_ASM69902v1_genomic
+
+Finished job 79.
+27 of 104 steps (26%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000699025_1_ASM69902v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000699025_1_ASM69902v1_genomic.fna
+    jobid: 28
+    wildcards: samples=GCF_000699025_1_ASM69902v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000699025_1_ASM69902v1_genomic.jf.
+Finished job 28.
+28 of 104 steps (27%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_004684165_1_ASM468416v1_genomic.fna
+    output: suis_jellyfish_output/GCF_004684165_1_ASM468416v1_genomic.jf
+    jobid: 76
+    wildcards: samples=GCF_004684165_1_ASM468416v1_genomic
+
+Finished job 76.
+29 of 104 steps (28%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_004684165_1_ASM468416v1_genomic.jf
+    output: suis_jellyfish_output/GCF_004684165_1_ASM468416v1_genomic.fna
+    jobid: 25
+    wildcards: samples=GCF_004684165_1_ASM468416v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_004684165_1_ASM468416v1_genomic.jf.
+Finished job 25.
+30 of 104 steps (29%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.jf
+    jobid: 73
+    wildcards: samples=GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic
+
+Finished job 73.
+31 of 104 steps (30%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.fna
+    jobid: 22
+    wildcards: samples=GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.jf.
+Finished job 22.
+32 of 104 steps (31%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_003194855_1_ASM319485v1_genomic.fna
+    output: suis_jellyfish_output/GCF_003194855_1_ASM319485v1_genomic.jf
+    jobid: 91
+    wildcards: samples=GCF_003194855_1_ASM319485v1_genomic
+
+Finished job 91.
+33 of 104 steps (32%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_003194855_1_ASM319485v1_genomic.jf
+    output: suis_jellyfish_output/GCF_003194855_1_ASM319485v1_genomic.fna
+    jobid: 40
+    wildcards: samples=GCF_003194855_1_ASM319485v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_003194855_1_ASM319485v1_genomic.jf.
+Finished job 40.
+34 of 104 steps (33%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.jf
+    jobid: 67
+    wildcards: samples=GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic
+
+Finished job 67.
+35 of 104 steps (34%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.fna
+    jobid: 16
+    wildcards: samples=GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.jf.
+Finished job 16.
+36 of 104 steps (35%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.jf
+    jobid: 82
+    wildcards: samples=GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic
+
+Finished job 82.
+37 of 104 steps (36%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.fna
+    jobid: 31
+    wildcards: samples=GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.jf.
+Finished job 31.
+38 of 104 steps (37%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.jf
+    jobid: 62
+    wildcards: samples=GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic
+
+Finished job 62.
+39 of 104 steps (38%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.fna
+    jobid: 11
+    wildcards: samples=GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.jf.
+Finished job 11.
+40 of 104 steps (38%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.jf
+    jobid: 104
+    wildcards: samples=GCF_000371125_1_Bruc_suis_63_261_V1_genomic
+
+Finished job 104.
+41 of 104 steps (39%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.fna
+    jobid: 53
+    wildcards: samples=GCF_000371125_1_Bruc_suis_63_261_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.jf.
+Finished job 53.
+42 of 104 steps (40%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000160275_1_ASM16027v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000160275_1_ASM16027v1_genomic.jf
+    jobid: 86
+    wildcards: samples=GCF_000160275_1_ASM16027v1_genomic
+
+Finished job 86.
+43 of 104 steps (41%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000160275_1_ASM16027v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000160275_1_ASM16027v1_genomic.fna
+    jobid: 35
+    wildcards: samples=GCF_000160275_1_ASM16027v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000160275_1_ASM16027v1_genomic.jf.
+Finished job 35.
+44 of 104 steps (42%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.jf
+    jobid: 83
+    wildcards: samples=GCF_000366245_1_Bruc_suis_94_11_V1_genomic
+
+Finished job 83.
+45 of 104 steps (43%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.fna
+    jobid: 32
+    wildcards: samples=GCF_000366245_1_Bruc_suis_94_11_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.jf.
+Finished job 32.
+46 of 104 steps (44%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.jf
+    jobid: 72
+    wildcards: samples=GCF_000480055_1_Bruc_suis_04-0115_V1_genomic
+
+Finished job 72.
+47 of 104 steps (45%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.fna
+    jobid: 21
+    wildcards: samples=GCF_000480055_1_Bruc_suis_04-0115_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.jf.
+Finished job 21.
+48 of 104 steps (46%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.jf
+    jobid: 75
+    wildcards: samples=GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic
+
+Finished job 75.
+49 of 104 steps (47%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.fna
+    jobid: 24
+    wildcards: samples=GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.jf.
+Finished job 24.
+50 of 104 steps (48%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000742055_1_ASM74205v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000742055_1_ASM74205v1_genomic.jf
+    jobid: 105
+    wildcards: samples=GCF_000742055_1_ASM74205v1_genomic
+
+Finished job 105.
+51 of 104 steps (49%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000742055_1_ASM74205v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000742055_1_ASM74205v1_genomic.fna
+    jobid: 54
+    wildcards: samples=GCF_000742055_1_ASM74205v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000742055_1_ASM74205v1_genomic.jf.
+Finished job 54.
+52 of 104 steps (50%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.jf
+    jobid: 95
+    wildcards: samples=GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic
+
+Finished job 95.
+53 of 104 steps (51%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.fna
+    jobid: 44
+    wildcards: samples=GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.jf.
+Finished job 44.
+54 of 104 steps (52%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.jf
+    jobid: 97
+    wildcards: samples=GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic
+
+Finished job 97.
+55 of 104 steps (53%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.fna
+    jobid: 46
+    wildcards: samples=GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.jf.
+Finished job 46.
+56 of 104 steps (54%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000236255_1_ASM23625v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000236255_1_ASM23625v1_genomic.jf
+    jobid: 57
+    wildcards: samples=GCF_000236255_1_ASM23625v1_genomic
+
+Finished job 57.
+57 of 104 steps (55%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000236255_1_ASM23625v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000236255_1_ASM23625v1_genomic.fna
+    jobid: 6
+    wildcards: samples=GCF_000236255_1_ASM23625v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000236255_1_ASM23625v1_genomic.jf.
+Finished job 6.
+58 of 104 steps (56%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000600055_1_ASM60005v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000600055_1_ASM60005v1_genomic.jf
+    jobid: 77
+    wildcards: samples=GCF_000600055_1_ASM60005v1_genomic
+
+Finished job 77.
+59 of 104 steps (57%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000600055_1_ASM60005v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000600055_1_ASM60005v1_genomic.fna
+    jobid: 26
+    wildcards: samples=GCF_000600055_1_ASM60005v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000600055_1_ASM60005v1_genomic.jf.
+Finished job 26.
+60 of 104 steps (58%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_001715425_1_ASM171542v1_genomic.fna
+    output: suis_jellyfish_output/GCF_001715425_1_ASM171542v1_genomic.jf
+    jobid: 69
+    wildcards: samples=GCF_001715425_1_ASM171542v1_genomic
+
+Finished job 69.
+61 of 104 steps (59%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_001715425_1_ASM171542v1_genomic.jf
+    output: suis_jellyfish_output/GCF_001715425_1_ASM171542v1_genomic.fna
+    jobid: 18
+    wildcards: samples=GCF_001715425_1_ASM171542v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_001715425_1_ASM171542v1_genomic.jf.
+Finished job 18.
+62 of 104 steps (60%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_002749475_1_ASM274947v1_genomic.fna
+    output: suis_jellyfish_output/GCF_002749475_1_ASM274947v1_genomic.jf
+    jobid: 89
+    wildcards: samples=GCF_002749475_1_ASM274947v1_genomic
+
+Finished job 89.
+63 of 104 steps (61%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_002749475_1_ASM274947v1_genomic.jf
+    output: suis_jellyfish_output/GCF_002749475_1_ASM274947v1_genomic.fna
+    jobid: 38
+    wildcards: samples=GCF_002749475_1_ASM274947v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_002749475_1_ASM274947v1_genomic.jf.
+Finished job 38.
+64 of 104 steps (62%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000007505_1_ASM750v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000007505_1_ASM750v1_genomic.jf
+    jobid: 70
+    wildcards: samples=GCF_000007505_1_ASM750v1_genomic
+
+Finished job 70.
+65 of 104 steps (62%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000007505_1_ASM750v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000007505_1_ASM750v1_genomic.fna
+    jobid: 19
+    wildcards: samples=GCF_000007505_1_ASM750v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000007505_1_ASM750v1_genomic.jf.
+Finished job 19.
+66 of 104 steps (63%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_900460605_1_58116_D02_genomic.fna
+    output: suis_jellyfish_output/GCF_900460605_1_58116_D02_genomic.jf
+    jobid: 74
+    wildcards: samples=GCF_900460605_1_58116_D02_genomic
+
+Finished job 74.
+67 of 104 steps (64%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_900460605_1_58116_D02_genomic.jf
+    output: suis_jellyfish_output/GCF_900460605_1_58116_D02_genomic.fna
+    jobid: 23
+    wildcards: samples=GCF_900460605_1_58116_D02_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_900460605_1_58116_D02_genomic.jf.
+Finished job 23.
+68 of 104 steps (65%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000223195_1_ASM22319v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000223195_1_ASM22319v1_genomic.jf
+    jobid: 56
+    wildcards: samples=GCF_000223195_1_ASM22319v1_genomic
+
+Finished job 56.
+69 of 104 steps (66%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000223195_1_ASM22319v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000223195_1_ASM22319v1_genomic.fna
+    jobid: 5
+    wildcards: samples=GCF_000223195_1_ASM22319v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000223195_1_ASM22319v1_genomic.jf.
+Finished job 5.
+70 of 104 steps (67%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000875695_1_ASM87569v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000875695_1_ASM87569v1_genomic.jf
+    jobid: 88
+    wildcards: samples=GCF_000875695_1_ASM87569v1_genomic
+
+Finished job 88.
+71 of 104 steps (68%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000875695_1_ASM87569v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000875695_1_ASM87569v1_genomic.fna
+    jobid: 37
+    wildcards: samples=GCF_000875695_1_ASM87569v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000875695_1_ASM87569v1_genomic.jf.
+Finished job 37.
+72 of 104 steps (69%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000331635_1_Brucella_019_genomic.fna
+    output: suis_jellyfish_output/GCF_000331635_1_Brucella_019_genomic.jf
+    jobid: 85
+    wildcards: samples=GCF_000331635_1_Brucella_019_genomic
+
+Finished job 85.
+73 of 104 steps (70%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000331635_1_Brucella_019_genomic.jf
+    output: suis_jellyfish_output/GCF_000331635_1_Brucella_019_genomic.fna
+    jobid: 34
+    wildcards: samples=GCF_000331635_1_Brucella_019_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000331635_1_Brucella_019_genomic.jf.
+Finished job 34.
+74 of 104 steps (71%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000157775_1_ASM15777v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000157775_1_ASM15777v1_genomic.jf
+    jobid: 93
+    wildcards: samples=GCF_000157775_1_ASM15777v1_genomic
+
+Finished job 93.
+75 of 104 steps (72%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000157775_1_ASM15777v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000157775_1_ASM15777v1_genomic.fna
+    jobid: 42
+    wildcards: samples=GCF_000157775_1_ASM15777v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000157775_1_ASM15777v1_genomic.jf.
+Finished job 42.
+76 of 104 steps (73%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.jf
+    jobid: 66
+    wildcards: samples=GCF_000366205_1_Bruc_suis_92_29_V1_genomic
+
+Finished job 66.
+77 of 104 steps (74%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.fna
+    jobid: 15
+    wildcards: samples=GCF_000366205_1_Bruc_suis_92_29_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.jf.
+Finished job 15.
+78 of 104 steps (75%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000741995_1_ASM74199v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000741995_1_ASM74199v1_genomic.jf
+    jobid: 63
+    wildcards: samples=GCF_000741995_1_ASM74199v1_genomic
+
+Finished job 63.
+79 of 104 steps (76%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000741995_1_ASM74199v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000741995_1_ASM74199v1_genomic.fna
+    jobid: 12
+    wildcards: samples=GCF_000741995_1_ASM74199v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000741995_1_ASM74199v1_genomic.jf.
+Finished job 12.
+80 of 104 steps (77%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.jf
+    jobid: 94
+    wildcards: samples=GCF_000371105_1_Bruc_suis_63_198_V1_genomic
+
+Finished job 94.
+81 of 104 steps (78%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.fna
+    jobid: 43
+    wildcards: samples=GCF_000371105_1_Bruc_suis_63_198_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.jf.
+Finished job 43.
+82 of 104 steps (79%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.jf
+    jobid: 103
+    wildcards: samples=GCF_000366085_1_Bruc_suis_63_252_V1_genomic
+
+Finished job 103.
+83 of 104 steps (80%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.fna
+    jobid: 52
+    wildcards: samples=GCF_000366085_1_Bruc_suis_63_252_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.jf.
+Finished job 52.
+84 of 104 steps (81%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.jf
+    jobid: 102
+    wildcards: samples=GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic
+
+Finished job 102.
+85 of 104 steps (82%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.fna
+    jobid: 51
+    wildcards: samples=GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.jf.
+Finished job 51.
+86 of 104 steps (83%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_001594165_1_ASM159416v1_genomic.fna
+    output: suis_jellyfish_output/GCF_001594165_1_ASM159416v1_genomic.jf
+    jobid: 98
+    wildcards: samples=GCF_001594165_1_ASM159416v1_genomic
+
+Finished job 98.
+87 of 104 steps (84%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_001594165_1_ASM159416v1_genomic.jf
+    output: suis_jellyfish_output/GCF_001594165_1_ASM159416v1_genomic.fna
+    jobid: 47
+    wildcards: samples=GCF_001594165_1_ASM159416v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_001594165_1_ASM159416v1_genomic.jf.
+Finished job 47.
+88 of 104 steps (85%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000701065_1_Bru1330_genomic.fna
+    output: suis_jellyfish_output/GCF_000701065_1_Bru1330_genomic.jf
+    jobid: 68
+    wildcards: samples=GCF_000701065_1_Bru1330_genomic
+
+Finished job 68.
+89 of 104 steps (86%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000701065_1_Bru1330_genomic.jf
+    output: suis_jellyfish_output/GCF_000701065_1_Bru1330_genomic.fna
+    jobid: 17
+    wildcards: samples=GCF_000701065_1_Bru1330_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000701065_1_Bru1330_genomic.jf.
+Finished job 17.
+90 of 104 steps (87%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.fna
+    output: suis_jellyfish_output/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.jf
+    jobid: 78
+    wildcards: samples=GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic
+
+Finished job 78.
+91 of 104 steps (88%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.jf
+    output: suis_jellyfish_output/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.fna
+    jobid: 27
+    wildcards: samples=GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.jf.
+Finished job 27.
+92 of 104 steps (88%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_003994175_1_ASM399417v1_genomic.fna
+    output: suis_jellyfish_output/GCF_003994175_1_ASM399417v1_genomic.jf
+    jobid: 92
+    wildcards: samples=GCF_003994175_1_ASM399417v1_genomic
+
+Finished job 92.
+93 of 104 steps (89%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_003994175_1_ASM399417v1_genomic.jf
+    output: suis_jellyfish_output/GCF_003994175_1_ASM399417v1_genomic.fna
+    jobid: 41
+    wildcards: samples=GCF_003994175_1_ASM399417v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_003994175_1_ASM399417v1_genomic.jf.
+Finished job 41.
+94 of 104 steps (90%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000740255_1_ASM74025v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000740255_1_ASM74025v1_genomic.jf
+    jobid: 96
+    wildcards: samples=GCF_000740255_1_ASM74025v1_genomic
+
+Finished job 96.
+95 of 104 steps (91%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000740255_1_ASM74025v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000740255_1_ASM74025v1_genomic.fna
+    jobid: 45
+    wildcards: samples=GCF_000740255_1_ASM74025v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000740255_1_ASM74025v1_genomic.jf.
+Finished job 45.
+96 of 104 steps (92%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000742005_1_ASM74200v1_genomic.fna
+    output: suis_jellyfish_output/GCF_000742005_1_ASM74200v1_genomic.jf
+    jobid: 80
+    wildcards: samples=GCF_000742005_1_ASM74200v1_genomic
+
+Finished job 80.
+97 of 104 steps (93%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000742005_1_ASM74200v1_genomic.jf
+    output: suis_jellyfish_output/GCF_000742005_1_ASM74200v1_genomic.fna
+    jobid: 29
+    wildcards: samples=GCF_000742005_1_ASM74200v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000742005_1_ASM74200v1_genomic.jf.
+Finished job 29.
+98 of 104 steps (94%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_003994045_1_ASM399404v1_genomic.fna
+    output: suis_jellyfish_output/GCF_003994045_1_ASM399404v1_genomic.jf
+    jobid: 58
+    wildcards: samples=GCF_003994045_1_ASM399404v1_genomic
+
+Finished job 58.
+99 of 104 steps (95%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_003994045_1_ASM399404v1_genomic.jf
+    output: suis_jellyfish_output/GCF_003994045_1_ASM399404v1_genomic.fna
+    jobid: 7
+    wildcards: samples=GCF_003994045_1_ASM399404v1_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_003994045_1_ASM399404v1_genomic.jf.
+Finished job 7.
+100 of 104 steps (96%) done
+
+rule count:
+    input: ../../Approved_Sequences/GCF_000209635_2_ASM20963v2_genomic.fna
+    output: suis_jellyfish_output/GCF_000209635_2_ASM20963v2_genomic.jf
+    jobid: 101
+    wildcards: samples=GCF_000209635_2_ASM20963v2_genomic
+
+Finished job 101.
+101 of 104 steps (97%) done
+
+rule dump:
+    input: suis_jellyfish_output/GCF_000209635_2_ASM20963v2_genomic.jf
+    output: suis_jellyfish_output/GCF_000209635_2_ASM20963v2_genomic.fna
+    jobid: 50
+    wildcards: samples=GCF_000209635_2_ASM20963v2_genomic
+
+Removing temporary output file suis_jellyfish_output/GCF_000209635_2_ASM20963v2_genomic.jf.
+Finished job 50.
+102 of 104 steps (98%) done
+
+rule jellyfish_complete:
+    input: suis_jellyfish_output/GCF_000157775_1_ASM15777v1_genomic.fna, suis_jellyfish_output/GCF_003994045_1_ASM399404v1_genomic.fna, suis_jellyfish_output/GCF_000371205_1_Bruc_suis_F5_05-4_V1_genomic.fna, suis_jellyfish_output/GCF_000698325_1_ASM69832v1_genomic.fna, suis_jellyfish_output/GCF_000366245_1_Bruc_suis_94_11_V1_genomic.fna, suis_jellyfish_output/GCF_000742055_1_ASM74205v1_genomic.fna, suis_jellyfish_output/GCF_000740255_1_ASM74025v1_genomic.fna, suis_jellyfish_output/GCF_000698285_1_ASM69828v1_genomic.fna, suis_jellyfish_output/GCF_000366225_1_Bruc_suis_92_63_V1_genomic.fna, suis_jellyfish_output/GCF_000600055_1_ASM60005v1_genomic.fna, suis_jellyfish_output/GCF_000365705_1_Bruc_suis_F4_06-146_V1_genomic.fna, suis_jellyfish_output/GCF_000366085_1_Bruc_suis_63_252_V1_genomic.fna, suis_jellyfish_output/GCF_000160275_1_ASM16027v1_genomic.fna, suis_jellyfish_output/GCF_000371285_1_Bruc_suis_F8_06-1_V1_genomic.fna, suis_jellyfish_output/GCF_000699025_1_ASM69902v1_genomic.fna, suis_jellyfish_output/GCF_000223195_1_ASM22319v1_genomic.fna, suis_jellyfish_output/GCF_000741995_1_ASM74199v1_genomic.fna, suis_jellyfish_output/GCF_000331635_1_Brucella_019_genomic.fna, suis_jellyfish_output/GCF_000371325_1_Bruc_suis_F9_06-1_V1_genomic.fna, suis_jellyfish_output/GCF_000698245_1_ASM69824v1_genomic.fna, suis_jellyfish_output/GCF_000701065_1_Bru1330_genomic.fna, suis_jellyfish_output/GCF_000365585_1_Bruc_suis_F5_03-2_V1_genomic.fna, suis_jellyfish_output/GCF_001715425_1_ASM171542v1_genomic.fna, suis_jellyfish_output/GCF_000371265_1_Bruc_suis_F7_06-5_V1_genomic.fna, suis_jellyfish_output/GCF_002749475_1_ASM274947v1_genomic.fna, suis_jellyfish_output/GCF_003194855_1_ASM319485v1_genomic.fna, suis_jellyfish_output/GCF_000365565_1_Bruc_suis_F8_06-2_V1_genomic.fna, suis_jellyfish_output/GCF_000742005_1_ASM74200v1_genomic.fna, suis_jellyfish_output/GCF_004684165_1_ASM468416v1_genomic.fna, suis_jellyfish_output/GCF_000236255_1_ASM23625v1_genomic.fna, suis_jellyfish_output/GCF_000480055_1_Bruc_suis_04-0115_V1_genomic.fna, suis_jellyfish_output/GCF_000371305_1_Bruc_suis_F8_06-3_V1_genomic.fna, suis_jellyfish_output/GCF_000480315_1_Bruc_suis_06-988-1656_V1_genomic.fna, suis_jellyfish_output/GCF_000875695_1_ASM87569v1_genomic.fna, suis_jellyfish_output/GCF_000371245_1_Bruc_suis_F7_06-2_V1_genomic.fna, suis_jellyfish_output/GCF_000371225_1_Bruc_suis_F7_06-1_V1_genomic.fna, suis_jellyfish_output/GCF_000007505_1_ASM750v1_genomic.fna, suis_jellyfish_output/GCF_000371125_1_Bruc_suis_63_261_V1_genomic.fna, suis_jellyfish_output/GCF_003994175_1_ASM399417v1_genomic.fna, suis_jellyfish_output/GCF_000018905_1_ASM1890v1_genomic.fna, suis_jellyfish_output/GCF_000366265_1_Bruc_suis_CNGB_786_V1_genomic.fna, suis_jellyfish_output/GCF_000480035_1_Bruc_suis_06-791-1309_V1_genomic.fna, suis_jellyfish_output/GCF_000371165_1_Bruc_suis_F12_02_V1_genomic.fna, suis_jellyfish_output/GCF_900460605_1_58116_D02_genomic.fna, suis_jellyfish_output/GCF_000366205_1_Bruc_suis_92_29_V1_genomic.fna, suis_jellyfish_output/GCF_000371105_1_Bruc_suis_63_198_V1_genomic.fna, suis_jellyfish_output/GCF_000209635_2_ASM20963v2_genomic.fna, suis_jellyfish_output/GCF_001594165_1_ASM159416v1_genomic.fna, suis_jellyfish_output/GCF_900446145_1_59071_D01_genomic.fna, suis_jellyfish_output/GCF_000480135_1_Bruc_suis_06-997-1672_V1_genomic.fna, suis_jellyfish_output/GCF_000698345_1_ASM69834v1_genomic.fna
+    output: flags/suis_jellyfish_flag.txt
+    jobid: 2
+
+Finished job 2.
+103 of 104 steps (99%) done
+
+localrule all:
+    input: j_all_suis.fna, flags/suis_jellyfish_flag.txt
+    jobid: 0
+
+Finished job 0.
+104 of 104 steps (100%) done

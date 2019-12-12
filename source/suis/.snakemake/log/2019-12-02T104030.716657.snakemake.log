@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 23 of /home/ashlynn/Desktop/Fall_2019/Brucella/source/suis/blast.smk:
+Missing input files for rule blast_search:
+blast/suis_master.fna.ndb

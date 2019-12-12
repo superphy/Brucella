@@ -1,0 +1,10 @@
+FileNotFoundError in line 2 of /home/ashlynn/Desktop/Fall_2019/Brucella/source/suis/suis_jellyfish.smk:
+File b'../Metadata.csv' does not exist
+  File "/home/ashlynn/Desktop/Fall_2019/Brucella/source/suis/suis_jellyfish.smk", line 2, in <module>
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 709, in parser_f
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 449, in _read
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 818, in __init__
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 1049, in _make_engine
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 1695, in __init__
+  File "pandas/_libs/parsers.pyx", line 402, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 718, in pandas._libs.parsers.TextReader._setup_parser_source
