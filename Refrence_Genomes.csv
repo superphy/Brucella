@@ -1,0 +1,10 @@
+,Sample,Record ID,Max Distance,Strain,Number of Contigs
+7,GCF_001715365_1_ASM171536v1_genomic,1715365,0.0,Brucella canis,2
+15,GCF_900236555_1_Bru_genome5_genomic,900236555,0.000394323,Brucella melitensis,2
+16,GCF_900446005_1_58116_B01_genomic,900446005,0.000156838,Brucella abortus,2
+24,GCF_000698345_1_ASM69834v1_genomic,698345,7.82718e-05,Brucella suis,2
+123,GCF_000590795_1_ASM59079v1_genomic,590795,0.000394323,Brucella ceti,2
+309,GCF_900446125_1_57572_C01_genomic,900446125,0.000235701,Brucella neotomae,2
+372,GCF_009601725_1_ASM960172v1_genomic,9601725,0.0,Brucella sp,2
+482,GCF_000016845_1_ASM1684v1_genomic,16845,0.0,Brucella ovis,2
+540,GCF_000221005_1_ASM22100v1_genomic,221005,0.000235701,Brucella pinnipedialis,2
