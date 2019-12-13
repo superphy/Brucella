@@ -7,10 +7,10 @@ from multiprocessing import cpu_count
 
 if __name__ == '__main__':
 	
-	suis_biovar = pd.read_csv('Suis_Biovar.csv', converters={'Unnamed: 0': lambda x: str(x)})
+	suis_biovar = pd.read_csv('suis_biovar_files/Suis_Biovar.csv', converters={'Unnamed: 0': lambda x: str(x)})
 	suis_biovar = suis_biovar.set_index('Unnamed: 0')
 	suis_biovar = suis_biovar[suis_biovar['Biovar Classification'] != 'No Matched Biovar']
-	kmer_count = pd.read_csv("suis_kmer_counts.csv", index_col = 'Unnamed: 0')
+	kmer_count = pd.read_csv("suis_biovar_files/Suis_Kmer_Counts.csv", index_col = 'Unnamed: 0')
 
 	biovar_occ_dict = {} # key = biovar, value = # of samples of that biovar
 	for biovar in list(suis_biovar['Biovar Classification'].unique()):
@@ -71,4 +71,4 @@ if __name__ == '__main__':
 			df[biovar+' RANK'] = rank_dict.values()
 			df[biovar+' P_VAL'] = p_dict.values()
 	
-	df.to_csv('Suis_Ranks.csv')
+	df.to_csv('suis_biovar_files/Suis_Ranks.csv')

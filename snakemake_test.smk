@@ -8,17 +8,19 @@ cwd = os.getcwd()
 
 rule all:
 	input:
-		k_counts = 'Kmer_Counts.csv', 
-		suis_k_counts = 'suis_biovar_files/Suis_Kmer_Counts.csv',
-		sp_occ = 'Ranks.csv'
-'''
+		kover_in = 'Kover_Data/Kmer_Matrix.tsv', 
+		tree = 'phylogenetic_tree.pdf', 
+		rank_hist = 'Visualizations/Rank_Histograms/', 
+		suis_k_loc = 'suis_biovar_files/Suis_Kmer_Locations.csv', 
+		Top_200 = 'Top_200_bp.csv'
+
 #Aquiring the data from the ncbi database
 rule ncbi_data_retrieval:
 	output:
 		"refseq/"
 	shell:
 		'ncbi-genome-download --parallel 55 --genus "brucella" bacteria --format fasta'
-'''
+
 mds = glob.glob('refseq/bacteria/*/MD5SUMS')
 unzips = glob.glob('refseq/bacteria/*/*.gz')
 
@@ -256,14 +258,14 @@ rule suis_jellyfish:
 		suis_biovar = suis_biovar[suis_biovar['Biovar Classification'] != 'No Matched Biovar']
 		samples = suis_biovar.index.values
 		for sample in samples:	
-			shell('jellyfish count -C -m {kmer_size} -s 100M -t 2 Approved_Sequences/'+sample+'.fna -o suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf --out-counter-len 1') # runs the jellyfish count opperation 
-			shell('jellyfish dump suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf > suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.fna') # runs the jellyfish dump opperation 
-			shell('rm suis_biovar_files/jellyfish/'+sample[19:len(sample)-4]+'.jf')
+			shell('jellyfish count -C -m {kmer_size} -s 100M -t 2 Approved_Sequences/'+sample+'.fna -o suis_biovar_files/jellyfish/'+sample+'.jf --out-counter-len 1') # runs the jellyfish count opperation 
+			shell('jellyfish dump suis_biovar_files/jellyfish/'+sample+'.jf > suis_biovar_files/jellyfish/'+sample+'.fna') # runs the jellyfish dump opperation 
+			shell('rm suis_biovar_files/jellyfish/'+sample+'.jf')
 		shell('touch {output}')
 
 rule kmer_counts:
 	input:
-		flag = 'suis_biovar_files/jellyfish_complete.txt',
+		flag = 'jellyfish/jellyfish_complete.txt',
 		k_counts = 'source/kmer_counts.py'
 	output:
 		'Kmer_Counts.csv'
@@ -272,7 +274,7 @@ rule kmer_counts:
 
 rule suis_kmer_counts:
 	input:
-		flag = 'jellyfish/jellyfish_complete.txt',
+		flag = 'suis_biovar_files/jellyfish_complete.txt',
 		k_counts = 'source/suis/suis_kmer_counts.py'
 	output:
 		'suis_biovar_files/Suis_Kmer_Counts.csv'
@@ -307,3 +309,81 @@ rule ranks:
 		'Ranks.csv'
 	run:
 		shell('python {input.ranks}')
+
+rule suis_ranks:
+	input:
+		suis_biovar = 'suis_biovar_files/Suis_Biovar.csv',
+		sk_counts = 'suis_biovar_files/Suis_Kmer_Counts.csv',
+		s_ranks = 'source/suis/suis_ranks.py'
+	output:
+		'suis_biovar_files/Suis_Ranks.csv'
+	run:	
+		shell('python {input.s_ranks}')
+
+rule rank_histograms:
+	input:
+		ranks = 'Ranks.csv',
+		sp_occ = 'Species_Occurrence.csv',
+		s_ranks = 'suis_biovar_files/Suis_Ranks.csv',
+		s_biovar = 'suis_biovar_files/Suis_Biovar.csv',
+		rank_hist = 'source/rank_histograms.py',
+		s_rank_hist = 'source/suis/suis_rank_histograms.py'
+	output:
+		directory('Visualizations/Rank_Histograms/')
+	run:
+		shell('python {input.rank_hist}')
+		shell('python {input.s_rank_hist}')
+
+rule chrom_mapping:
+	input:
+		metadata = 'Metadata.csv',
+		ranks = 'Ranks.csv',
+		sp_occ = 'Species_Occurrence.csv',
+		chrom_mapping = 'source/chrom_mapping.py'
+	output:
+		visualizations = directory('Visualizations/Kmer_Locations/'), 
+		ref_genomes = 'Refrence_Genomes.csv',
+		k_loc = 'Kmer_Locations.csv'
+	run:
+		shell('python {input.chrom_mapping}')
+
+rule suis_chrom_mapping:
+	input:
+		metadata = 'Metadata.csv',
+		ranks = 'suis_biovar_files/Suis_Ranks.csv',
+		s_biovar = 'suis_biovar_files/Suis_Biovar.csv',
+		chrom_mapping = 'source/suis/suis_chrom_mapping.py'
+	output:
+		ref_genomes = 'suis_biovar_files/Suis_Refrence_Genomes.csv',
+		suis_k_loc = 'suis_biovar_files/Suis_Kmer_Locations.csv'
+	run:
+		shell('python {input.chrom_mapping}')
+
+rule top_200_bp:
+	input:
+		ranks = 'Ranks.csv',
+		ref_genomes = 'Refrence_Genomes.csv',
+		k_loc = 'Kmer_Locations.csv',
+		strain_occ = 'Species_Occurrence.csv',
+		top_200 = 'source/top_200.py'
+	output:
+		vis = directory('Visualizations/Top_200_bp/'), 
+		Top_200 = 'Top_200_bp.csv'
+	run:
+		shell('python {input.top_200}')
+
+#Not implemented on suis files - ran out of time...Shouldnt be too dificult to map the existing function to the suis data
+
+rule kover_input:
+	input:
+		metadata = 'Metadata.csv',
+		k_counts = 'Kmer_Counts.csv',
+		strain_occ = 'Species_Occurrence.csv',
+		k_input = 'source/kover_inputs.py'
+	output:
+		'Kover_Data/Kmer_Matrix.tsv'
+	run:
+		shell('python {input.k_input}')
+
+
+#If you would like to run Kover on this dataset, run the seperate kover smk. 
