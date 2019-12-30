@@ -23,6 +23,7 @@ for i, row in suis_biovar.iterrows():
 		meta_ref = suis_biovar.drop(index = row.name)
 meta_ref = meta_ref.drop_duplicates(subset = 'Biovar Classification', keep='first') # one of each species
 meta_ref.to_csv('suis_biovar_files/Suis_Refrence_Genomes.csv')
+
 biovars = list(meta_ref['Biovar Classification'])
 complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
 alt_ref_strain = {}
