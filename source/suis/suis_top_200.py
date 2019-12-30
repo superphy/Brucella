@@ -5,12 +5,12 @@ from concurrent.futures import ProcessPoolExecutor
 from multiprocessing import cpu_count
 pd.options.mode.use_inf_as_na = True
 
-ranks_df = pd.read_csv('../../suis_biovar_files/Suis_Ranks.csv', index_col = 0)
+ranks_df = pd.read_csv('suis_biovar_files/Suis_Ranks.csv', index_col = 0)
 ranks_df = ranks_df.filter(axis = 1, like='RANK')
 ranks_index = ranks_df.index.values
-refrence_genomes = pd.read_csv('../../suis_biovar_files/Suis_Refrence_Genomes.csv')
-k_loc = pd.read_csv('../../suis_biovar_files/Suis_Kmer_Locations.csv', index_col = 0)
-suis_biovar = pd.read_csv('../../suis_biovar_files/Suis_Biovar.csv')
+refrence_genomes = pd.read_csv('suis_biovar_files/Suis_Refrence_Genomes.csv')
+k_loc = pd.read_csv('suis_biovar_files/Suis_Kmer_Locations.csv', index_col = 0)
+suis_biovar = pd.read_csv('suis_biovar_files/Suis_Biovar.csv')
 suis_biovar = suis_biovar[suis_biovar['Biovar Classification'] != 'No Matched Biovar']
 biovars = list(suis_biovar['Biovar Classification'].unique())
 
@@ -122,9 +122,9 @@ with ProcessPoolExecutor(cpu_count()-10) as ppe:
 			plt.ylabel('Rank')
 			plt.title('Rank Distribution for Top 200 bp on '+chrom+' of '+biovar+' '+soa+'\n'+ref_genome)
 
-			plt.savefig('../../Visualizations/Top_200_bp/'+biovar+'_'+soa+'.png')
+			plt.savefig('Visualizations/Top_200_bp/'+biovar+'_'+soa+'.png')
 			plt.clf()
 
-final_df.to_csv('../../suis_biovar_files/Suis_Top_200_bp.csv')
+final_df.to_csv('suis_biovar_files/Suis_Top_200_bp.csv')
 
 
