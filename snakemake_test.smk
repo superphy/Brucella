@@ -373,6 +373,18 @@ rule top_200_bp:
 		shell('python {input.top_200}')
 
 #Not implemented on suis files - ran out of time...Shouldnt be too dificult to map the existing function to the suis data
+rule suis_top_200_bp:
+	input:
+		refrence_genomes = 'suis_biovar_files/Suis_Refrence_Genomes.csv'
+		k_loc = 'suis_biovar_files/Suis_Kmer_Locations.csv'
+		suis_biovar ='suis_biovar_files/Suis_Biovar.csv'
+		ranks_df = 'suis_biovar_files/Suis_Ranks.csv'
+		top_200 = 'source/suis/suis_top_200.py'
+	output:
+		'suis_biovar_files/Suis_Top_200_bp.csv'
+	run:
+		shell('python {input.top_200}')
+
 
 rule kover_input:
 	input:
